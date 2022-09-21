@@ -3,6 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended : true}));
 
+
+
+
+
 app.listen(8080, function(){
 
     console.log('8080 port')
@@ -26,4 +30,6 @@ app.get('/write', function(req, res){
 
 app.post('/add' , function(req, res){
     res.send('전송완료')
+    console.log(req.body.title)
+    console.log(req.body.date)
 });
