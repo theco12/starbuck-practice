@@ -5,8 +5,6 @@ app.use(bodyParser.urlencoded({extended : true}));
 
 
 
-
-
 app.listen(8080, function(){
 
     console.log('8080 port')
