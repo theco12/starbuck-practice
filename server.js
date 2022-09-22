@@ -24,9 +24,18 @@ app.use(bodyParser.urlencoded({extended : true}));
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://ejzhrla:kreg6022@cluster0.sjbl4jl.mongodb.net/todoapp?retryWrites=true&w=majority";
+
+var db;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
-  const collection = client.db("test").collection("devices");
+  const collection = client.db("todoapp").collection("post");
+    app.listen(8080, function(){
+        console.log('8080 port')
+    });
+
+    collection.insertOne({ 이름 : 'john' , 나이 : '21'}, function(에러, 결과){
+            console.log('저장완료');
+    });
   // perform actions on the collection object
   client.close();
 });
