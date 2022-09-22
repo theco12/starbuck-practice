@@ -2,13 +2,35 @@ const express =require('express');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended : true}));
+// const { MongoClient, ServerApiVersion } = require('mongodb');
 
+// var db;//변수를 만들어줌 
 
+// MongoClient.connect('mongodb+srv://ejzhrla:kreg6022@cluster0.sjbl4jl.mongodb.net/todoapp?retryWrites=true&w=majority', function(에러, client){
 
-app.listen(8080, function(){
+//     if (에러) return console.log(에러)
+   
+//     db = client.db('todoapp'); //todoapp 이라는 database폴더에 연결좀요!
+   
+//     db.collection('post').insertOne({ 이름 : 'john' , 나이 : '21'}, function(에러, 결과){
+//         console.log('저장완료');
+//     });
 
-    console.log('8080 port')
+//     app.listen(8080, function(){
+//         console.log('8080 port')
+//     });
+
+// });
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://ejzhrla:kreg6022@cluster0.sjbl4jl.mongodb.net/todoapp?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
 });
+
 
 app.get('/pet', function(req, res){
     res.send('반갑습니다');
