@@ -2,6 +2,8 @@ const express =require('express');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended : true}));
+
+
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 
 // var db;//변수를 만들어줌 
