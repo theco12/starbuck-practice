@@ -22,10 +22,10 @@ const send = async (data) => {
 };
 
 const content = {
-  from: "deokho.kim@yatavent.com",
-  to: "4dfd3a3b0a-a50f30@inbox.mailtrap.io",
-  subject: "고객문의 서비스"
-  text : "이메일 보내기 구현"
+  from: "4dfd3a3b0a-a50f30@inbox.mailtrap.io",
+  to: "ejzhrla@naver.com",
+  subject: "고객문의 서비스",
+  text: "이메일 보내기 구현",
 };
 
 send(content);
