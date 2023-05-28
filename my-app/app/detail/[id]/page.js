@@ -11,11 +11,11 @@ export default async function Detail(props) {
 
   return (
     <div>
-      <h1>상세페이지</h1>
-      <div className="list-bg">
-        <div className="list-item">
-          <h4>글제목 : {data.title}</h4>
-          <p>내용 : {data.content}</p>
+      <h1 className="detail-title">💻상세페이지</h1>
+      <div className="detail-bg">
+        <div className="detail-item">
+          <h4>{data.title}</h4>
+          <p>{data.content}</p>
         </div>
       </div>
     </div>

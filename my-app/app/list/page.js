@@ -16,10 +16,14 @@ export default async function List() {
             <div key={i} className="list-item">
               <h4>{a.title}</h4>
               <p>{a.content}</p>
+              <Link href={`/edit/${a._id}`}>✏️</Link>
             </div>
           </Link>
         );
       })}
+      <button className="writeBtn">
+        <Link href={`/write`}>+</Link>
+      </button>
     </div>
   );
 }
