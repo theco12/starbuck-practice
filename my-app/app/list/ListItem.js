@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export default async function ListItem({ data }) {
@@ -11,15 +13,20 @@ export default async function ListItem({ data }) {
               <p>{a.content}</p>
             </Link>
             <Link href={`/edit/${a._id}`}>✏️</Link>
-            <span
+            <button
               onClick={() => {
                 fetch("/api/delete/delete", {
                   method: "DELETE",
-                  body: `${data[i]._id}`,
-                });
+                  body: `${a._id}`,
+                })
+                  .then((res) => res.json())
+                  .then((res) => {
+                    console.log(res);
+                  });
               }}>
-              🗑️
-            </span>
+              삭제
+            </button>
+            {/* <DeleteButton data={data} index={i} /> */}
           </div>
         );
       })}
