@@ -2,6 +2,7 @@ import { MongoClient } from "mongodb";
 import { connectDB } from "@/util/database";
 import Link from "next/link";
 import { ObjectId } from "mongodb";
+import ListItem from "./ListItem";
 
 export default async function List() {
   const client = await connectDB;
@@ -10,20 +11,7 @@ export default async function List() {
 
   return (
     <div className="list-bg">
-      {data.map((a, i) => {
-        return (
-          <Link key={i} href={`/detail/${a._id}`}>
-            <div key={i} className="list-item">
-              <h4>{a.title}</h4>
-              <p>{a.content}</p>
-              <Link href={`/edit/${a._id}`}>✏️</Link>
-            </div>
-          </Link>
-        );
-      })}
-      <button className="writeBtn">
-        <Link href={`/write`}>+</Link>
-      </button>
+      <ListItem data={data} />
     </div>
   );
 }
