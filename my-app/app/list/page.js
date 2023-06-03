@@ -9,6 +9,11 @@ export default async function List() {
   const db = client.db("todoapp");
   let data = await db.collection("post").find().toArray();
 
+  data = data.map((a) => {
+    a._id = a._id.toString();
+    return a;
+  });
+
   return (
     <div className="list-bg">
       <ListItem data={data} />
