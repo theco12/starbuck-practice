@@ -14,7 +14,20 @@ export default async function ListItem({ data }) {
             </Link>
             <Link href={`/edit/${a._id}`}>✏️</Link>
 
-            <span>🗑️</span>
+            <span
+              onClick={() => {
+                fetch("/api/delete/delete", {
+                  method: "POST",
+                  body: JSON.stringify({ _id: a._id }),
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    alert("삭제되었습니다.");
+                    location.reload();
+                  });
+              }}>
+              🗑️
+            </span>
           </div>
         );
       })}
