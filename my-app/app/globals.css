@@ -105,3 +105,7 @@ button {
   bottom: 20px;
   box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
 }
+
+.deleteBtn {
+  cursor: pointer;
+}

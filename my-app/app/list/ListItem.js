@@ -15,6 +15,7 @@ export default async function ListItem({ data }) {
             <Link href={`/edit/${a._id}`}>✏️</Link>
 
             <span
+              className="deleteBtn"
               onClick={() => {
                 fetch("/api/delete/delete", {
                   method: "POST",
