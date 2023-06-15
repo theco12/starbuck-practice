@@ -12,7 +12,6 @@ const LoginButtonStyle = styled.button`
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  float: right;
 `;
 
 export default function LoginButton() {

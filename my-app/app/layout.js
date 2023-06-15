@@ -1,5 +1,3 @@
-import { getServerSession } from "next-auth";
-import LoginButton from "./Style/LoginButton";
 import "./globals.css";
 import Link from "next/link";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
@@ -10,16 +8,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  await getServerSession(authOptions);
-
   return (
     <html lang="ko">
       <title>thecorative</title>
       <body>
         <div className="navBar">
-          <Link href="/">Home</Link>
-          <Link href="/list">List</Link>
-          <LoginButton />
+          <Link href="/">thecorativeBlog</Link>
+
+          <Link href="/list">Blog</Link>
         </div>
         {children}
       </body>
