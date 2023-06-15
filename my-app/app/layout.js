@@ -19,7 +19,6 @@ export default async function RootLayout({ children }) {
         <div className="navBar">
           <Link href="/">Home</Link>
           <Link href="/list">List</Link>
-          <Link href="/cart">Cart</Link>
           <LoginButton />
         </div>
         {children}
