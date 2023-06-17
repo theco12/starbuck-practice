@@ -9,8 +9,8 @@ a {
 
 .navBar {
   background-color: #fff;
-  padding: 20px;
-  max-width: 900px;
+  padding: 20px 0 10px 20px;
+  max-width: 750px;
   margin: 0 auto;
   border-bottom: 1px solid #eee;
 }
@@ -18,12 +18,27 @@ a {
 .navBar a {
   color: #000;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 24px;
   margin: 0 10px;
 }
 
+.linkBar {
+  float: right;
+  display: flex;
+  margin: -13px 0;
+  flex-direction: row;
+}
+
+.linkBar a {
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.linkBar a:hover {
+  color: rgb(49, 130, 246);
+}
+
 .list-bg {
-  background: rgb(249, 250, 255);
   padding: 10px;
 }
 
@@ -110,4 +125,10 @@ button {
 
 .deleteBtn {
   cursor: pointer;
+}
+
+.worked {
+  display: flex;
+  align-items: baseline;
+  column-gap: 40px;
 }

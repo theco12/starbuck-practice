@@ -12,30 +12,9 @@ export default async function ListItem({ data }) {
               <h4>{a.title}</h4>
               <p>{a.content}</p>
             </Link>
-            <Link href={`/edit/${a._id}`}>✏️</Link>
-
-            <span
-              className="deleteBtn"
-              onClick={() => {
-                fetch("/api/delete/delete", {
-                  method: "POST",
-                  body: JSON.stringify({ _id: a._id }),
-                })
-                  .then((response) => response.json())
-                  .then((data) => {
-                    alert("삭제되었습니다.");
-                    location.reload();
-                  });
-              }}>
-              🗑️
-            </span>
           </div>
         );
       })}
-
-      <button className="writeBtn">
-        <Link href={`/write`}>+</Link>
-      </button>
     </div>
   );
 }

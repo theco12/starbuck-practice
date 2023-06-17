@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 export const metadata = {
@@ -13,9 +14,14 @@ export default async function RootLayout({ children }) {
       <title>thecorative</title>
       <body>
         <div className="navBar">
-          <Link href="/">thecorativeBlog</Link>
-
-          <Link href="/list">Blog</Link>
+          <Link href="/">
+            <Image src="/images/logo.png" width={170} height={33} alt="logo" />
+          </Link>
+          <div className="linkBar">
+            <Link href="/">Home</Link>
+            <Link href="/list">Blog</Link>
+            <Link href="/list">Portfolio</Link>
+          </div>
         </div>
         {children}
       </body>
