@@ -1,6 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import styled from "styled-components";
+
+const NewDate = styled.div`
+  font-size: 12px;
+  color: #999;
+`;
 
 export default async function ListItem({ data }) {
   return (
