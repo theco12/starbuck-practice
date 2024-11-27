@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import MyPage from "./pages/MyPage";
 import Nav from "./Layout/Nav";
 import MainBanner from "./components/MainBanner";
+import Footer from "./Layout/Footer";
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/MyPage" element={<MyPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
